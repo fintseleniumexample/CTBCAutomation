@@ -4,7 +4,7 @@
 	<test thread-count="1" name="Test" parallel="classes">
 		<classes>
 <!--			<class name="example.example.tests.GoogleSearchTest" />-->
-			<class name="com.ctbt.automation.tests.WelcomePageTest"></class>
+			<class name="com.ctbt.automation.tests.CTBCAutomationScripts"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

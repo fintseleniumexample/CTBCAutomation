@@ -2,11 +2,11 @@ package com.ctbt.automation.tests;
 
 import com.ctbt.automation.pages.*;
 import com.ctbt.automation.context.WebDriverContext;
-import example.example.pages.*;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class WelcomePageTest extends BaseTest {
+public class CTBCAutomationScripts extends BaseTest {
     private WelcomePage welcomePage;
     private AccountSelectionPage accountSelectionPage;
     private InformationPage informationPage;
