@@ -16,7 +16,7 @@ import com.ctbt.automation.util.ReportUtil;
  * component's <code>addReportListener<code> method. When the report event
  * occurs, that object's appropriate method is invoked.
  *
- * @see ReportEvent
+ *
  */
 public class ReportListener implements ITestListener {
 
@@ -74,8 +74,7 @@ public class ReportListener implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-		ExtentReportManager.endCurrentTest();
-		ExtentReportManager.getExtentReports().flush();
+
 	}
 
 }

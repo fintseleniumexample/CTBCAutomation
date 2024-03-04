@@ -186,4 +186,18 @@ public class BasePage {
 		Actions actions = new Actions(driver);
 		actions.moveByOffset(0, yOffset).perform();
 	}
+	public void scrollDownUsingRobot(){
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			// Execute JavaScript to simulate mouse wheel scrolling
+			js.executeScript("window.scrollBy(0, 300)"); // Positive value for scrolling down, negative for scrolling up
+
+//			Robot robot = new Robot();
+//
+//			robot.mouseWheel(1);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 }

@@ -2,11 +2,14 @@ package com.ctbt.automation.pages;
 
 import com.ctbt.automation.util.ReportUtil;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.List;
 
 public class CRMHomePage extends BasePage {
     @FindBy(xpath = "//div[@title='NRA']/../../..")
@@ -15,6 +18,15 @@ public class CRMHomePage extends BasePage {
     private WebElement nraApplicationsLink;
     @FindBy(xpath = "//span[text()='Active NRA Applications']")
     private WebElement nraApplicationTab;
+    @FindBy(xpath = "//*[contains(@class,'symbolFont ChevronDownMed-symbol')]")
+    private WebElement dropDownArrow;
+    @FindBy(xpath = "//span[text()='Invitations Analytics']")
+    private WebElement invitationsAnalytics;
+    @FindBy(xpath = "//span[text()='NRA Analytics']")
+    private WebElement NRAAnalytics;
+    @FindBy(xpath = "//div[contains(@class,'chartcontainer-row suiter-chart')]")
+    private List<WebElement> graphCount;
+
     @FindBy(xpath = "//div[@class='ag-center-cols-container']/div[1]//div[@role='presentation']")
     private WebElement latestNRAApp;
     @FindBy(xpath = "//label[text()='Face Comparison Result']/../../..//select//option[@data-selected='true']")
@@ -45,6 +57,28 @@ public class CRMHomePage extends BasePage {
         Assert.assertTrue(nraApplicationTab.isDisplayed(), "Active NRA Applications is not displayed");
         ReportUtil.addScreenShot(LogStatus.PASS, "Active NRA Applications page displayed");
     }
+    public void verifySixGraphs() {
+        waitFor(2);
+        waiter.until(ExpectedConditions.visibilityOf(graphCount.get(0)));
+        while(graphCount.size()<6){
+            scrollDownUsingRobot();
+            waitFor(2);
+        }
+        Assert.assertEquals(graphCount.size(),6, "Six Graphs not displayed");
+        ReportUtil.addScreenShot(LogStatus.PASS, "Six Graphs displayed");
+    }
+    public void verifyTwoDropDowns() {
+        waiter.until(ExpectedConditions.visibilityOf(dropDownArrow));
+
+        waiter.until(ExpectedConditions.elementToBeClickable(dropDownArrow));
+        dropDownArrow.click();
+        Assert.assertTrue(invitationsAnalytics.isDisplayed(), " Invitations Analytics drop down displayed");
+        Assert.assertTrue(NRAAnalytics.isDisplayed(), " Nra Analytics drop down displayed");
+        waitFor(2);
+        ReportUtil.addScreenShot(LogStatus.PASS, "Two drop downs displayed");
+    }
+
+
     public void clickFirstNRAApp() {
         waiter.until(ExpectedConditions.visibilityOf(latestNRAApp));
         latestNRAApp.click();

@@ -1,7 +1,12 @@
 package com.ctbt.automation.tests;
 
+
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import com.ctbt.automation.listeners.CustomTestNGReporter;
+import org.testng.TestRunner;
+import org.testng.annotations.BeforeClass;
 import com.ctbt.automation.context.Constants;
 import com.ctbt.automation.context.WebDriverContext;
 import com.ctbt.automation.listeners.LogListener;
@@ -13,6 +18,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
@@ -21,7 +28,7 @@ import org.testng.annotations.*;
  *
  * @author Satheesh Guduru
  */
-@Listeners({ ReportListener.class, LogListener.class })
+@Listeners({ ReportListener.class, LogListener.class , CustomTestNGReporter.class})
 public class BaseTest {
 
 	/** The driver. */
@@ -69,14 +76,26 @@ public class BaseTest {
 		//ops.setExperimentalOption("devtools", true);
 		driver = new ChromeDriver();
 
-//		System.setProperty("webdriver.edge.driver", Constants.EDGE_DRIVER_PATH);
-//
-//		// Initialize EdgeDriver
-//		 driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebDriverContext.setDriver(driver);
 		navigateToBaseUrl();
+	}
+	public WebDriver selenoidDriver(){
+try {
+	DesiredCapabilities capabilities = new DesiredCapabilities();
+	capabilities.setBrowserName("chrome");
+	capabilities.setVersion("120"); // Or specify a specific version
+
+	// Set Selenoid URL
+	String selenoidUrl = "http://localhost:4444/wd/hub"; // Change to your Selenoid URL
+
+	// Create WebDriver instance
+	 driver = new RemoteWebDriver(new URL(selenoidUrl), capabilities);
+}catch (Exception e){
+e.printStackTrace();
+}
+		return driver;
 	}
 	@AfterMethod
 	public void tearDown() {
@@ -101,5 +120,8 @@ public class BaseTest {
 	@AfterClass
 	public void wrapUp() {
 
+	}
+	@BeforeClass
+	public void setupClassName(ITestContext context) {
 	}
 }

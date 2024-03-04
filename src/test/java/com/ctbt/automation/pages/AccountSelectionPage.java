@@ -28,6 +28,10 @@ public class AccountSelectionPage extends BasePage {
     private WebElement addButton;
     @FindBy(xpath = "(//button[text()='Add'])[2]")
     private WebElement savingsAddButton;
+    @FindBy(xpath = "//div[text()='Personal Basic Checking']/../..//div[text()='Maximum product(s) added.']")
+    private WebElement maxCheckingAcc;
+    @FindBy(xpath = "//div[text()='Personal Savings Account']/../..//div[text()='Maximum product(s) added.']")
+    private WebElement maxSavingAcc;
 
 
     public AccountSelectionPage(WebDriver driver) {
@@ -39,6 +43,17 @@ public class AccountSelectionPage extends BasePage {
         waiter.until(ExpectedConditions.visibilityOf(checkingAccount));
         Assert.assertTrue(checkingAccount.isDisplayed(), "Account page is not displayed");
         ReportUtil.addScreenShot(LogStatus.PASS, "Account page displayed");
+    }
+    public void verifyMaxCheckingAccMsg() {
+        waiter.until(ExpectedConditions.visibilityOf(maxCheckingAcc));
+        Assert.assertTrue(maxCheckingAcc.isDisplayed(), "'Maximum product(s) added' not displayed for Checking");
+        ReportUtil.addScreenShot(LogStatus.PASS, "'Maximum product(s) added' message displayed for Checking");
+    }
+    public void verifyMaxSavingsAccMsg() {
+        waitFor(2);
+        waiter.until(ExpectedConditions.visibilityOf(maxSavingAcc));
+        Assert.assertTrue(maxSavingAcc.isDisplayed(), "'Maximum product(s) added' not displayed for Savings");
+        ReportUtil.addScreenShot(LogStatus.PASS, "'Maximum product(s) added' message displayed for Savings");
     }
     public void enterAmount(String accountName) {
         if(accountName.equalsIgnoreCase("Savings") || accountName.equalsIgnoreCase("Joint")){
@@ -55,17 +70,24 @@ public class AccountSelectionPage extends BasePage {
                 ((WebElement)amountList.get(0)).sendKeys(TestProperties.getProperty("amount"));
             }
             TestDataRepository.storeTestData("amount", TestProperties.getProperty("amount"));
-           // savingsAmount.sendKeys(TestProperties.getProperty("amount"));
-            waiter.until(ExpectedConditions.visibilityOf(savingsAddButton));
-            savingsAddButton.click();
+
+            List addList=driver.findElements(By.xpath("//button[text()='Add']"));
+            if(addList.size()>1){
+                ((WebElement)amountList.get(1)).click();
+            }else{
+                ((WebElement)amountList.get(0)).click();
+            }
+
         }else {
             waiter.until(ExpectedConditions.visibilityOf(amount));
             TestDataRepository.storeTestData("amount", TestProperties.getProperty("amount"));
             amount.sendKeys(TestProperties.getProperty("amount"));
-            clickAdd();
-        }
 
+        }
+        clickAdd();
     }
+
+
     public void clickAdd() {
 
         waiter.until(ExpectedConditions.visibilityOf(addButton));

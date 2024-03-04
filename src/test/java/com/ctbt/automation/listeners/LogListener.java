@@ -1,10 +1,20 @@
 package com.ctbt.automation.listeners;
 
+import com.ctbt.automation.util.ReportUtil;
+import com.ctbt.automation.util.TestProperties;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.ctbt.automation.util.LoggerUtil;
+
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
+
+import static com.ctbt.automation.util.Gpt3ApiRequestXMLReader.getOpenAIOpnion;
 
 /**
  * The listener interface for receiving log events. The class that is interested
@@ -13,7 +23,7 @@ import com.ctbt.automation.util.LoggerUtil;
  * <code>addLogListener<code> method. When the log event occurs, that object's
  * appropriate method is invoked.
  *
- * @see LogEvent
+ *
  */
 public class LogListener implements ITestListener {
 
@@ -72,6 +82,6 @@ public class LogListener implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-	}
+		}
 
 }
