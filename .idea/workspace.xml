@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53234d90-33d5-48ea-bbbc-bb749280b2c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/context/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/context/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/listeners/CustomTestNGReporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/listeners/CustomTestNGReporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/listeners/ReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/listeners/ReportListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/AccountSelectionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/AccountSelectionPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/AgreementsDiscPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/AgreementsDiscPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/CRMHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/CRMHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/InformationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/InformationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/UploadDocumentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/UploadDocumentsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/pages/WelcomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/CTBCAutomationScripts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/CTBCAutomationScripts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/ExpermentTestReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/tests/ExpermentTestReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/util/Gpt3ApiRequestXMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/util/Gpt3ApiRequestXMLReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/util/XMLToStringConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ctbt/automation/util/XMLToStringConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config/test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/suites/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/suites/testng.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2cZRjlh6azrIa4XS7oHAk2phJuZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SatheeshGuduru/Desktop/CTBCAutomation/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SatheeshGuduru\Desktop\CTBCAutomation" />
+      <recent name="C:\Users\SatheeshGuduru\Desktop\CTBCAutomation\src\test\java\com\ctbt\automation\report" />
+      <recent name="C:\Users\SatheeshGuduru\Desktop\CTBCAutomation\src\test\resources\config" />
+      <recent name="C:\Users\SatheeshGuduru\Desktop\CTBCAutomation\target\test-classes\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SatheeshGuduru\Desktop\CTBCAutomation\src\test\resources\docs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ctbt.automation.tests" />
+      <recent name="com.ctbt.automation.util" />
+      <recent name="example.example.pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.selenium-testng-framework [clean,install]">
+    <configuration name="Gpt3ApiRequestXMLReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ctbt.automation.util.Gpt3ApiRequestXMLReader" />
+      <module name="selenium-testng-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ctbt.automation.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebcamCapture" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ctbt.automation.util.WebcamCapture" />
+      <module name="selenium-testng-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ctbt.automation.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="selenium-testng-framework [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="CTBCAutomationScripts" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-testng-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ctbt.automation.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ctbt.automation.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.ctbt.automation.tests.CTBCAutomationScripts" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CTBCAutomationScripts.verifyAppWithBlankSelfie" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-testng-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ctbt.automation.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ctbt.automation.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.ctbt.automation.tests.CTBCAutomationScripts" />
+      <option name="METHOD_NAME" value="verifyAppWithBlankSelfie" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpermentTestReport" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-testng-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ctbt.automation.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ctbt.automation.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.ctbt.automation.tests.ExpermentTestReport" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.WebcamCapture" />
+      <item itemvalue="Application.Gpt3ApiRequestXMLReader" />
+      <item itemvalue="Maven.selenium-testng-framework [clean,install]" />
+      <item itemvalue="TestNG.CTBCAutomationScripts.verifyAppWithBlankSelfie" />
+      <item itemvalue="TestNG.ExpermentTestReport" />
+      <item itemvalue="TestNG.CTBCAutomationScripts" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.CTBCAutomationScripts" />
+        <item itemvalue="TestNG.CTBCAutomationScripts.verifyAppWithBlankSelfie" />
+        <item itemvalue="Application.WebcamCapture" />
+        <item itemvalue="TestNG.ExpermentTestReport" />
+        <item itemvalue="Application.Gpt3ApiRequestXMLReader" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53234d90-33d5-48ea-bbbc-bb749280b2c4" name="Changes" comment="" />
+      <created>1708317252632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708317252632</updated>
+    </task>
+    <servers />
+  </component>
+</project>

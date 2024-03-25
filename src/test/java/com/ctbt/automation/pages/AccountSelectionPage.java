@@ -72,19 +72,24 @@ public class AccountSelectionPage extends BasePage {
             TestDataRepository.storeTestData("amount", TestProperties.getProperty("amount"));
 
             List addList=driver.findElements(By.xpath("//button[text()='Add']"));
+            System.out.println("addList size:"+addList.size());
             if(addList.size()>1){
-                ((WebElement)amountList.get(1)).click();
+
+                waiter.until(ExpectedConditions.visibilityOf( savingsAddButton));
+                waiter.until(ExpectedConditions.elementToBeClickable( savingsAddButton));
+                savingsAddButton.click();
+
             }else{
-                ((WebElement)amountList.get(0)).click();
+                clickAdd();
             }
 
         }else {
             waiter.until(ExpectedConditions.visibilityOf(amount));
             TestDataRepository.storeTestData("amount", TestProperties.getProperty("amount"));
             amount.sendKeys(TestProperties.getProperty("amount"));
-
+            clickAdd();
         }
-        clickAdd();
+
     }
 
 

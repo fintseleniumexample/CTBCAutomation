@@ -58,21 +58,36 @@ public class InformationPage extends BasePage {
         uploadImageUsingRobot(Constants.IMAGE_PATH);
         waiter.withTimeout(Duration.ofSeconds(5));
     }
+    public void uploadBlankImage() {
+
+        waiter.until(ExpectedConditions.visibilityOf(takeAPhoto));
+        waiter.until(ExpectedConditions.elementToBeClickable(takeAPhoto));
+        javaScriptClick(takeAPhoto);
+        uploadImageUsingRobot(Constants.BLANK_IMAGE_PATH);
+        waiter.withTimeout(Duration.ofSeconds(5));
+    }
+
     public void fillPersonalDetail() {
         enterFirstName();
         lastFirstName();
         enterDOB();
         countryOfCitizenship();
     }
+    public void fillPersonalDetailForOFAC(){
+        enterFirstName();
+        lastFirstName();
+        enterOFACDOB();
+        countryOfCitizenship();
+    }
     public void enterFirstName() {
-        String firstNameVal=RandomStringUtils.randomAlphabetic(5, 10);
+        String firstNameVal=generateRandomString();
         TestDataRepository.storeTestData("firstName",firstNameVal);
         waiter.until(ExpectedConditions.visibilityOf(firstName));
 
         firstName.sendKeys(firstNameVal);
     }
     public void lastFirstName() {
-        String lastNameVal=RandomStringUtils.randomAlphabetic(5, 10);
+        String lastNameVal=generateRandomString();
         TestDataRepository.storeTestData("lastName",lastNameVal);
         waiter.until(ExpectedConditions.visibilityOf(lastFirstName));
         lastFirstName.sendKeys(lastNameVal);
@@ -81,6 +96,11 @@ public class InformationPage extends BasePage {
         waiter.until(ExpectedConditions.visibilityOf(DOB));
         TestDataRepository.storeTestData("DOB",TestProperties.getProperty("dob"));
         DOB.sendKeys(TestProperties.getProperty("dob"));
+    }
+    public void enterOFACDOB() {
+        waiter.until(ExpectedConditions.visibilityOf(DOB));
+        TestDataRepository.storeTestData("OFACdob",TestProperties.getProperty("OFACdob"));
+        DOB.sendKeys(TestProperties.getProperty("OFACdob"));
     }
     public void countryOfCitizenship() {
         selectDropdownOption(countryOfCitizenship);

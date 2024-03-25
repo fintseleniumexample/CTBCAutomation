@@ -9,6 +9,8 @@ import com.relevantcodes.extentreports.LogStatus;
 import com.ctbt.automation.report.ExtentReportManager;
 import com.ctbt.automation.util.ReportUtil;
 
+import java.io.File;
+
 /**
  * The listener interface for receiving report events. The class that is
  * interested in processing a report event implements this interface, and the
@@ -70,6 +72,7 @@ public class ReportListener implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
+
 	}
 
 	@Override

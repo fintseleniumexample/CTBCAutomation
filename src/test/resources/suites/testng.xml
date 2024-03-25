@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<listeners>
+		<listener class-name="com.ctbt.automation.listeners.CustomTestNGReporter" />
+		<listener class-name="com.ctbt.automation.listeners.LogListener" />
+	</listeners>
 	<test thread-count="1" name="Test" parallel="classes">
 		<classes>
-			<class name="com.ctbt.automation.tests.ExpermentTestReport" />
-<!--			<class name="com.ctbt.automation.tests.CTBCAutomationScripts"></class>-->
+<!--			<class name="com.ctbt.automation.tests.ExpermentTestReport" />-->
+			<class name="com.ctbt.automation.tests.CTBCAutomationScripts"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

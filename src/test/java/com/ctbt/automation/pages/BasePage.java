@@ -1,6 +1,7 @@
 package com.ctbt.automation.pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
@@ -21,13 +24,29 @@ public class BasePage {
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
+
 		PageFactory.initElements(driver, this);
 		waiter = new FluentWait<>(driver)
 				.ignoring(NoSuchElementException.class, WebDriverException.class)
 				.withTimeout(Duration.ofSeconds(60))
 				.pollingEvery(Duration.ofSeconds(2));
 	}
+	public static String generateRandomString() {
+		// Define alphabet characters
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
+		// Generate a random length between 6 and 10
+		Random random = new Random();
+		int length = random.nextInt(5) + 6; // Generates a random number between 6 and 10 (inclusive)
+
+		// Generate the random string
+		StringBuilder sb = new StringBuilder();
+		sb.append(Character.toUpperCase(alphabet.charAt(random.nextInt(alphabet.length())))); // First character is uppercase
+		for (int i = 1; i < length; i++) {
+			sb.append(alphabet.charAt(random.nextInt(alphabet.length()))); // Rest of the characters are lowercase
+		}
+		return sb.toString();
+	}
 	public void clickElement(By locator) {
 		WebElement element = waitForElement(locator);
 		clickAndWait(element);
@@ -188,16 +207,52 @@ public class BasePage {
 	}
 	public void scrollDownUsingRobot(){
 		try {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-
-			// Execute JavaScript to simulate mouse wheel scrolling
-			js.executeScript("window.scrollBy(0, 300)"); // Positive value for scrolling down, negative for scrolling up
-
-//			Robot robot = new Robot();
-//
-//			robot.mouseWheel(1);
+			Robot robot = new Robot();
+			robot.mouseWheel(1);
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+	public static boolean verifyElement(WebDriver driver, By locator, int timeoutInSeconds) {
+		Instant start = Instant.now();
+		Duration timeout = Duration.ofSeconds(timeoutInSeconds);
+		while (Duration.between(start, Instant.now()).compareTo(timeout) < 0) {
+			try {
+				WebElement element = driver.findElement(locator);
+				if (element.isDisplayed() && element.isEnabled()) {
+					return true; // Element is visible and present
+				}
+			} catch (org.openqa.selenium.NoSuchElementException | org.openqa.selenium.StaleElementReferenceException e) {
+				// Element not found or not attached to the DOM, continue waiting
+			}
+			// Sleep for a short interval before retrying
+			try {
+				Thread.sleep(1000); // Sleep for 1 second
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
+		}
+		return false; // Timeout reached, element not visible or present
+	}
+	public static boolean verifyElement(WebElement element, int timeoutInSeconds) {
+		Instant start = Instant.now();
+		Duration timeout = Duration.ofSeconds(timeoutInSeconds);
+		while (Duration.between(start, Instant.now()).compareTo(timeout) < 0) {
+			try {
+
+				if (element.isDisplayed() && element.isEnabled()) {
+					return true; // Element is visible and present
+				}
+			} catch (org.openqa.selenium.NoSuchElementException | org.openqa.selenium.StaleElementReferenceException e) {
+				// Element not found or not attached to the DOM, continue waiting
+			}
+			// Sleep for a short interval before retrying
+			try {
+				Thread.sleep(1000); // Sleep for 1 second
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
+		}
+		return false; // Timeout reached, element not visible or present
 	}
 }

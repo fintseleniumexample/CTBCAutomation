@@ -28,5 +28,6 @@ public class Constants {
 	public final static String UPLOAD_DOC = WORKING_DIRECTORY + "\\src\\test\\resources\\docs\\UploadDoc.png";
 	public final static String UPLOAD_PASSPORT = WORKING_DIRECTORY + "\\src\\test\\resources\\docs\\TaiwanPassport.jpg";
 	public final static String EDGE_DRIVER_PATH = WORKING_DIRECTORY + "/src/test/resources/drivers/msedgedriver.exe";
+	public final static String BLANK_IMAGE_PATH = WORKING_DIRECTORY + "\\src\\test\\resources\\docs\\blank.jpg";
 
 }

@@ -14,9 +14,10 @@ public class AgreementsDiscPage extends BasePage {
     private WebElement agreementDisc;
     @FindBy(xpath = "//input[@name='agreementNotice']/..")
     private WebElement agreementNotice;
-    @FindBy(xpath = "//div[contains(text(),'Congratulations on successful account opening at')]")
+    @FindBy(xpath = "//div[contains(text(),'Congratulations')]")
     private WebElement accountSuccess;
-
+    @FindBy(xpath = "//div[contains(text(),'Your application is submitted successfully & currently under review.')]")
+    private WebElement appUnderReview;
     public AgreementsDiscPage(WebDriver driver) {
         super(driver);
     }
@@ -35,9 +36,15 @@ public class AgreementsDiscPage extends BasePage {
     }
 
     public void verifyAccountSuccessPage() {
+        waitFor(5);
         waiter.until(ExpectedConditions.visibilityOf(accountSuccess));
         Assert.assertTrue(accountSuccess.isDisplayed(), "accountSuccess page is not displayed");
         ReportUtil.addScreenShot(LogStatus.PASS, "accountSuccesspage displayed");
+    }
+    public void verifyAppUnderReview() {
+        waiter.until(ExpectedConditions.visibilityOf(appUnderReview));
+        Assert.assertTrue(appUnderReview.isDisplayed(), "App under Review message displayed");
+        ReportUtil.addScreenShot(LogStatus.PASS, "App under Review message not displayed");
     }
     }
 
