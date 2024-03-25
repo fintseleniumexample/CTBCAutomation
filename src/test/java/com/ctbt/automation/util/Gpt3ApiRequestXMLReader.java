@@ -77,7 +77,7 @@ public class Gpt3ApiRequestXMLReader {
     public static String getOpnAIResp(String prompt) {
        String replyMSG="";
                 // Set your OpenAI API key
-        String apiKey = "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";
+        String apiKey = "";
 
         // Set the OpenAI API endpoint for GPT-3 Chat Completions
         String apiUrl = "https://api.openai.com/v1/chat/completions";
