@@ -21,12 +21,9 @@ public class CTBCAutomationScripts extends BaseTest {
     @DataProvider(name = "accounts")
     public Object[][] provideCredentials() {
         return new Object[][] {
-              { "Checking"  },
-                { "Savings" },
-
-
-        };
-    }
+              { "Checking"  }, { "Savings" }
+                };
+          }
     @Test(dataProvider = "accounts")
     public void ctbcSavingAndCheckingAccountVericationTest(String accountName) {
         welcomePage = new WelcomePage(WebDriverContext.getDriver());
@@ -114,7 +111,7 @@ public class CTBCAutomationScripts extends BaseTest {
             contactInformationPage.verifyCotactInfoPage();
             contactInformationPage.enterStreetAdress();
             informationPage.contactInfoNextButton();
-                identificationInformationPage = new IdentificationInformationPage(WebDriverContext.getDriver());
+            identificationInformationPage = new IdentificationInformationPage(WebDriverContext.getDriver());
         identificationInformationPage.verifyIdentificationInfoPage();
         identificationInformationPage.uploadPassport();
         informationPage.contactInfoNextButton();
@@ -619,5 +616,11 @@ public class CTBCAutomationScripts extends BaseTest {
         crmHomePage.clickFirstNRAApp();
           crmHomePage.verifyAccNo();
     }
+public void verifyInvitaionApp(){
+//    WebDriver driver1 = new ChromeDriver();
+//    WebDriver driver2 = new ChromeDriver();
+//    WebDriver driver3 = new ChromeDriver();
 
+
+}
 }

@@ -105,7 +105,7 @@
 				<configuration>
 					<reportsDirectory>./reports</reportsDirectory>
 					<suiteXmlFiles>
-						<suiteXmlFile>./src/test/resources/suites/testng.xml</suiteXmlFile>
+<!--						<suiteXmlFile>./src/test/resources/suites/testng.xml</suiteXmlFile>-->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
