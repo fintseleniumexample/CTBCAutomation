@@ -11,7 +11,7 @@ public class Gpt3ApiRequestXMLReader {
         try {
             String xmlDATA=XMLToStringConverter.getXMLString();
             String prompt2=prompt+" "+xmlDATA;
-            ChatGPT chatGPT = new ChatGPT("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");
+            ChatGPT chatGPT = new ChatGPT("");
             String hello = chatGPT.ask(prompt2);
             System.out.println(hello);
              replyMSG=  "<style>\n"+"table {\n" +
