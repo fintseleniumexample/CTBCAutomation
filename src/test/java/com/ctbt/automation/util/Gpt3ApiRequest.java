@@ -13,7 +13,7 @@ public class Gpt3ApiRequest {
 
     public static String getOpenAIResp(String prompt) throws Exception {
         // Set your OpenAI API key
-        String apiKey = "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";
+        String apiKey = "";
 
         // Set the OpenAI API endpoint for GPT-3 Chat Completions
        String apiUrl = "https://api.openai.com/v1/chat/completions";
